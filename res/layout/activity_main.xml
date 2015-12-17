@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutFaceDetect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imagePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <FrameLayout
+        android:id="@+id/frameWait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/textAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ui_face_result_frame"
+            android:drawableLeft="@drawable/ui_face_sex_male"
+            android:gravity="center"
+            android:minEms="2"
+            android:text="123"
+            android:textColor="#ffff00ff"
+            android:textSize="30sp"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutNotShareArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/layoutBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/ui_face_arrow_back_bg"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ui_face_arrow_back" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/btnDetect"
+            android:layout_toLeftOf="@+id/btnDetect"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="state"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ui_face_share"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnDetect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@id/btnShare"
+            android:background="@drawable/ui_face_detect" />
+
+        <Button
+            android:id="@+id/btnGetImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@id/btnDetect"
+            android:background="@drawable/ui_face_add_image" />
+
+        <ImageView
+            android:id="@+id/imageHintArrow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/btnGetImage"
+            android:layout_alignRight="@id/btnGetImage"
+            android:layout_below="@id/btnGetImage"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ui_face_hint_arrow" />
+
+        <ImageView
+            android:id="@+id/imageHintArrow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/btnDetect"
+            android:layout_alignRight="@id/btnDetect"
+            android:layout_below="@id/btnGetImage"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ui_face_hint_arrow" />
+
+        <ImageView
+            android:id="@+id/imageHintArrow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/btnShare"
+            android:layout_alignRight="@id/btnShare"
+            android:layout_below="@id/btnShare"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ui_face_hint_arrow" />
+
+        <TextView
+            android:id="@+id/textHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/btnGetImage"
+            android:layout_alignRight="@id/btnShare"
+            android:layout_below="@+id/imageHintArrow1"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ui_shape_face_hint_bg"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="从图库中选取一张图片"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/detectProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layoutGuide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="人脸检测"
+            android:textColor="#1E88E5"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+</RelativeLayout>
